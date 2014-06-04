@@ -1,0 +1,6 @@
+[program:aprs-ms-imap]
+directory = /tmp
+user = root
+command = /usr/local/bin/aprs-ms-imap
+stdout_logfile = /var/log/supervisor/aprs-ms-imap.log
+stderr_logfile = /var/log/supervisor/aprs-ms-imap.log

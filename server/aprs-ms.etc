@@ -1,0 +1,11 @@
+[Shared]
+DEBUG = True
+DB = postgresql+psycopg2://aprs-ms@/aprs-ms
+
+[Collect]
+aprs_is_host = push.koomasi.com
+aprs_is_port = 1314
+callsign = SV1OAN-1
+
+[IMAP]
+imap_port = 1143

@@ -30,8 +30,6 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-import settings
-
 from twisted.mail import imap4
 from twisted.mail.smtp import rfc822date
 from twisted.internet import reactor, defer, protocol
@@ -356,11 +354,8 @@ class IMAPFactory(protocol.Factory):
 def main():
     cache = {}
     
-    portal = portal.Portal(MailUserRealm(cache))
-    portal.registerChecker(APRSMSCredentialsChecker(cache))
-    
     factory = IMAPFactory()
-    factory.portal = portal
+    factory.portal = portal.Portal(MailUserRealm(cache), checkers=(APRSMSCredentialsChecker(cache),))
     
     reactor.listenTCP(settings.IMAP_PORT, factory)
     reactor.run()

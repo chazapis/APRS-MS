@@ -25,7 +25,7 @@ setup(
         'Topic :: Communications :: Ham Radio'
     ],
     keywords='ham radio, APRS, email',
-    install_requires=['SQLALchemy >= 0.9', 'Twisted >= 13.2', 'zope.interface >= 3.8'],
+    install_requires=['SQLALchemy >= 0.8.4', 'Twisted >= 13.2', 'zope.interface >= 3.8'],
     packages=['aprs_ms'],
     zip_safe=False,
     entry_points={'console_scripts': ['aprs-ms-collect = aprs_ms.collect:main',

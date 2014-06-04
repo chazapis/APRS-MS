@@ -1,0 +1,6 @@
+[program:aprs-ms-collect]
+directory = /tmp
+user = root
+command = /usr/local/bin/aprs-ms-collect
+stdout_logfile = /var/log/supervisor/aprs-ms-collect.log
+stderr_logfile = /var/log/supervisor/aprs-ms-collect.log
